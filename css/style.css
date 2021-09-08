@@ -1,0 +1,42 @@
+/*custome normalize*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    content: " ";
+    box-sizing: inherit;
+}
+.hamburger-check{
+    display: none;
+}
+.hamburger-icon{
+    position: relative;
+    width: 40px;
+    height: 3px;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #ccc;
+    margin: 1rem 3px;
+    transform: .3s ease;
+}
+
+.hamburger-icon::after,
+.hamburger-icon::before{
+    content: " ";
+    width: 100%;
+    position: absolute;
+    top: -9px;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 4px;
+    transition: .3s ease;
+}
+
+
+.hamburger-icon::after{
+    top: 9px;
+}
