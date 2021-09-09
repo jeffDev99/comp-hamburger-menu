@@ -10,10 +10,12 @@ html {
     content: " ";
     box-sizing: inherit;
 }
-.hamburger-check{
+
+.hamburger-check {
     display: none;
 }
-.hamburger-icon{
+
+.hamburger-icon {
     position: relative;
     width: 40px;
     height: 3px;
@@ -21,11 +23,11 @@ html {
     border-radius: 4px;
     background-color: #ccc;
     margin: 1rem 3px;
-    transform: .3s ease;
+    transition: .3s cubic-bezier(.68, -0.55, .27, 1.55) all;
 }
 
 .hamburger-icon::after,
-.hamburger-icon::before{
+.hamburger-icon::before {
     content: " ";
     width: 100%;
     position: absolute;
@@ -33,10 +35,28 @@ html {
     height: 100%;
     background-color: #ccc;
     border-radius: 4px;
-    transition: .3s ease;
+    transition: .3s cubic-bezier(.68, -0.55, .27, 1.55) all;
 }
 
-
-.hamburger-icon::after{
+.hamburger-icon::after {
     top: 9px;
+}
+
+.hamburger-check+label {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hamburger-check:checked+label .hamburger-icon {
+    background-color: transparent;
+}
+
+.hamburger-check:checked+label .hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.hamburger-check:checked+label .hamburger-icon::after {
+    top: 0;
+    transform: rotate(135deg);
 }
